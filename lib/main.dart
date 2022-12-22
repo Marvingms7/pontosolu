@@ -29,93 +29,49 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 172, 171, 168),
       ),
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                StaggeredGrid.count(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 4,
-                  crossAxisSpacing: 4,
+      body: Padding(
+        padding: const EdgeInsets.all(0.5),
+        child: Container(
+          color: Colors.amber,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Flexible(
+                    child: FractionallySizedBox(
+                      widthFactor: 1.0,
+                      child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.check),
+                          label: const Text('Bater Ponto')),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    StaggeredGridTile.count(
-                      crossAxisCellCount: 4,
-                      mainAxisCellCount: 4,
-                      child: InkWell(
-                        onTap: () => print('Ponto Batido'),
-                        child: Ink(
-                          color: Colors.red,
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Bater Ponto',
-                                  textAlign: TextAlign.center,
-                                ),
-                                Icon(Icons.punch_clock)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                    FractionallySizedBox(
+                      child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.check),
+                          label: const Text('Sincronizar')),
                     ),
-                    StaggeredGridTile.count(
-                      crossAxisCellCount: 2,
-                      mainAxisCellCount: 2,
-                      child: InkWell(
-                        onTap: () => print('Sincronizado!'),
-                        child: Ink(
-                          color: Colors.green,
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Sincronizar',
-                                  textAlign: TextAlign.center,
-                                ),
-                                Icon(
-                                  Icons.sync_rounded,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    StaggeredGridTile.count(
-                      crossAxisCellCount: 2,
-                      mainAxisCellCount: 2,
-                      child: InkWell(
-                        onTap: () => print('lista de pontos'),
-                        child: Ink(
-                          color: Colors.blue,
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Mostrar pontos batidos',
-                                  textAlign: TextAlign.center,
-                                ),
-                                Icon(Icons.check)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                    FractionallySizedBox(
+                      child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.check),
+                          label: const Text('Sincronizar')),
                     ),
                   ],
                 ),
-              ],
-            ),
-          );
-        },
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
