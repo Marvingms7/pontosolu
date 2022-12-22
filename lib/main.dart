@@ -29,43 +29,55 @@ class MyHomePage extends StatelessWidget {
         builder: (context, orientation) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: StaggeredGrid.count(
-              crossAxisCount: 4,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 4,
-                  mainAxisCellCount: 4,
-                  child: Container(
-                    color: Colors.red,
-                    child: const Text(
-                      'Bater Ponto',
-                      textAlign: TextAlign.center,
+                StaggeredGrid.count(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 4,
+                  children: [
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 4,
+                      mainAxisCellCount: 4,
+                      child: Container(
+                        color: Colors.red,
+                        child: const Center(
+                          child: Text(
+                            'Bater Ponto',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: Container(
-                    color: Colors.green,
-                    child: const Text(
-                      'marcus',
-                      textAlign: TextAlign.center,
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: Container(
+                        color: Colors.green,
+                        child: const Center(
+                          child: Text(
+                            'Sincronizar',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: Container(
-                    color: Colors.blue,
-                    child: const Text(
-                      'marcus',
-                      textAlign: TextAlign.center,
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 2,
+                      child: Container(
+                        color: Colors.blue,
+                        child: const Center(
+                          child: Text(
+                            'Mostrar pontos batidos',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
