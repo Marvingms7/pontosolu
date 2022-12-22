@@ -45,18 +45,21 @@ class MyHomePage extends StatelessWidget {
                     StaggeredGridTile.count(
                       crossAxisCellCount: 4,
                       mainAxisCellCount: 4,
-                      child: Container(
-                        color: Colors.red,
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Bater Ponto',
-                                textAlign: TextAlign.center,
-                              ),
-                              Icon(Icons.punch_clock)
-                            ],
+                      child: InkWell(
+                        onTap: () => print('Ponto Batido'),
+                        child: Ink(
+                          color: Colors.red,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Bater Ponto',
+                                  textAlign: TextAlign.center,
+                                ),
+                                Icon(Icons.punch_clock)
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -64,20 +67,23 @@ class MyHomePage extends StatelessWidget {
                     StaggeredGridTile.count(
                       crossAxisCellCount: 2,
                       mainAxisCellCount: 2,
-                      child: Container(
-                        color: Colors.green,
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Sincronizar',
-                                textAlign: TextAlign.center,
-                              ),
-                              Icon(
-                                Icons.sync_rounded,
-                              )
-                            ],
+                      child: InkWell(
+                        onTap: () => print('Sincronizado!'),
+                        child: Ink(
+                          color: Colors.green,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Sincronizar',
+                                  textAlign: TextAlign.center,
+                                ),
+                                Icon(
+                                  Icons.sync_rounded,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -85,18 +91,21 @@ class MyHomePage extends StatelessWidget {
                     StaggeredGridTile.count(
                       crossAxisCellCount: 2,
                       mainAxisCellCount: 2,
-                      child: Container(
-                        color: Colors.blue,
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Mostrar pontos batidos',
-                                textAlign: TextAlign.center,
-                              ),
-                              Icon(Icons.check)
-                            ],
+                      child: InkWell(
+                        onTap: () => print('lista de pontos'),
+                        child: Ink(
+                          color: Colors.blue,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Mostrar pontos batidos',
+                                  textAlign: TextAlign.center,
+                                ),
+                                Icon(Icons.check)
+                              ],
+                            ),
                           ),
                         ),
                       ),
