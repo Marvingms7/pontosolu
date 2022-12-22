@@ -23,8 +23,11 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('PontoSolution', style: TextStyle(color: Colors.black),),
-        backgroundColor: Color.fromARGB(255, 172, 171, 168),
+        title: const Text(
+          'PontoSolution',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: const Color.fromARGB(255, 172, 171, 168),
       ),
       body: OrientationBuilder(
         builder: (context, orientation) {
@@ -51,7 +54,8 @@ class MyHomePage extends StatelessWidget {
                               Text(
                                 'Bater Ponto',
                                 textAlign: TextAlign.center,
-                              ), Icon(Icons.punch_clock)
+                              ),
+                              Icon(Icons.punch_clock)
                             ],
                           ),
                         ),
@@ -69,7 +73,10 @@ class MyHomePage extends StatelessWidget {
                               Text(
                                 'Sincronizar',
                                 textAlign: TextAlign.center,
-                              ), Icon(Icons.sync_rounded, )
+                              ),
+                              Icon(
+                                Icons.sync_rounded,
+                              )
                             ],
                           ),
                         ),
@@ -80,14 +87,15 @@ class MyHomePage extends StatelessWidget {
                       mainAxisCellCount: 2,
                       child: Container(
                         color: Colors.blue,
-                        child:  Center(
+                        child: Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                               Text(
+                              Text(
                                 'Mostrar pontos batidos',
                                 textAlign: TextAlign.center,
-                              ), Icon(Icons.check)
+                              ),
+                              Icon(Icons.check)
                             ],
                           ),
                         ),
