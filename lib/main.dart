@@ -23,7 +23,8 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('PontoSolu'),
+        title: const Text('PontoSolution', style: TextStyle(color: Colors.black),),
+        backgroundColor: Color.fromARGB(255, 172, 171, 168),
       ),
       body: OrientationBuilder(
         builder: (context, orientation) {
