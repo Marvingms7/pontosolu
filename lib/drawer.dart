@@ -15,7 +15,7 @@ class NavegationDrawerWidget extends StatelessWidget {
           padding: padding,
           children: [
             const SizedBox(
-              height: 16,
+              height: 48,
             ),
             buildMenuItem(
               text: 'Horarios',
