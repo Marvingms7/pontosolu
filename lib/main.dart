@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,9 +41,9 @@ class MyHomePage extends StatelessWidget {
                   widthFactor: 1.0,
                   child: ElevatedButton(
                     onPressed: () {},
-                    style: ButtonStyle(
-                        minimumSize:
-                            MaterialStateProperty.all(const Size(50.0, 550.0))),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.redAccent,
+                        fixedSize: const Size(50.0, 550.0)),
                     child: const Text('Ponto'),
                   ),
                 ),
@@ -54,7 +51,6 @@ class MyHomePage extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: Container(
-                  color: Colors.red,
                   height: 170.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,6 +66,7 @@ class MyHomePage extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.greenAccent,
                                   fixedSize: const Size(100.0, 190.0)),
                               child: const Text('Sincronizar'),
                             ),
@@ -86,6 +83,7 @@ class MyHomePage extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blueAccent,
                                   fixedSize: const Size(100.0, 190.0)),
                               child: const Text('Sincronizar'),
                             ),
