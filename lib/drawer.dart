@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'horarios.dart';
+
 class NavegationDrawerWidget extends StatelessWidget {
   const NavegationDrawerWidget({super.key});
   final padding = const EdgeInsets.symmetric(horizontal: 20.0);
@@ -18,8 +20,9 @@ class NavegationDrawerWidget extends StatelessWidget {
               height: 48,
             ),
             buildMenuItem(
-              text: 'Horarios',
+              text: 'Horários',
               icon: Icons.schedule,
+              onClicked: () => selectedItem(context, 0),
             ),
             const SizedBox(
               height: 16,
@@ -65,6 +68,7 @@ class NavegationDrawerWidget extends StatelessWidget {
 Widget buildMenuItem({
   required String text,
   required IconData icon,
+  VoidCallback? onClicked,
 }) {
   const color = Colors.white;
   const hoverColor = Colors.white70;
@@ -76,6 +80,19 @@ Widget buildMenuItem({
     ),
     title: Text(text, style: const TextStyle(color: color)),
     hoverColor: hoverColor,
-    onTap: (() {}),
+    onTap: onClicked,
   );
+}
+
+void selectedItem(BuildContext context, int index) {
+  switch (index) {
+    case 0:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Horarios(),
+        ),
+      );
+      break;
+    default:
+  }
 }
