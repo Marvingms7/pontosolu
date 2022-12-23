@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pontosolu/drawer.dart';
+//import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,13 +22,14 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const NavegationDrawerWidget(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
           'PontoSolution',
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: const Color.fromARGB(255, 172, 171, 168),
+        backgroundColor: Colors.blueAccent
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -50,7 +53,7 @@ class MyHomePage extends StatelessWidget {
               ),
               Flexible(
                 flex: 1,
-                child: Container(
+                child: SizedBox(
                   height: 170.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
