@@ -15,25 +15,38 @@ class NavegationDrawerWidget extends StatelessWidget {
           padding: padding,
           children: [
             const SizedBox(
-              height: 48,
+              height: 16,
             ),
             buildMenuItem(
               text: 'Horarios',
               icon: Icons.schedule,
             ),
             const SizedBox(
-              height: 48,
+              height: 16,
             ),
             buildMenuItem(
-              text: 'Notificações',
-              icon: Icons.notifications,
+              text: 'Cronogramas',
+              icon: Icons.timeline,
             ),
             const SizedBox(
-              height: 48,
+              height: 16,
             ),
             buildMenuItem(
               text: 'Updates',
               icon: Icons.update,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+              text: 'Notificações',
+              icon: Icons.notifications,
             ),
           ],
         ),
@@ -50,11 +63,12 @@ Widget buildMenuItem({
   const hoverColor = Colors.white70;
 
   return ListTile(
-    leading: Icon(icon, color: color,),
+    leading: Icon(
+      icon,
+      color: color,
+    ),
     title: Text(text, style: const TextStyle(color: color)),
     hoverColor: hoverColor,
-    onTap: (() {
-      
-    }),
+    onTap: (() {}),
   );
 }
