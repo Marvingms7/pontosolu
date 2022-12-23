@@ -48,6 +48,13 @@ class NavegationDrawerWidget extends StatelessWidget {
               text: 'Notificações',
               icon: Icons.notifications,
             ),
+            const SizedBox(
+              height: 16,
+            ),
+            buildMenuItem(
+              text: 'Sair',
+              icon: Icons.logout,
+            ),
           ],
         ),
       ),
