@@ -89,7 +89,7 @@ void selectedItem(BuildContext context, int index) {
     case 0:
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => Horarios(),
+          builder: (context) => const Horarios(),
         ),
       );
       break;
