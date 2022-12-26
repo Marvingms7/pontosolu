@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "568840500328",
+    "firebase_url": "https://pontosolu-default-rtdb.firebaseio.com",
+    "project_id": "pontosolu",
+    "storage_bucket": "pontosolu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568840500328:android:350a14be8215cc622bb7dd",
+        "android_client_info": {
+          "package_name": "br.com.marcus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568840500328-j15hqilmd3krq695r7vc62kjh92lvl9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO5p7I0UpjXYWn329qoLWacHnjVbNz2oU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568840500328-j15hqilmd3krq695r7vc62kjh92lvl9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568840500328:android:d864b656431210f52bb7dd",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568840500328-j15hqilmd3krq695r7vc62kjh92lvl9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO5p7I0UpjXYWn329qoLWacHnjVbNz2oU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568840500328-j15hqilmd3krq695r7vc62kjh92lvl9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568840500328:android:742e41e31c1f6c882bb7dd",
+        "android_client_info": {
+          "package_name": "com.example.pontosolu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568840500328-j15hqilmd3krq695r7vc62kjh92lvl9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO5p7I0UpjXYWn329qoLWacHnjVbNz2oU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568840500328-j15hqilmd3krq695r7vc62kjh92lvl9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
