@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'horarios.dart';
+import 'package:pontosolu/drawer/pages/cronogramas.dart';
+import 'package:pontosolu/drawer/pages/notificacoes.dart';
+import 'package:pontosolu/drawer/pages/updates.dart';
+import 'pages/horarios.dart';
 
 class NavegationDrawerWidget extends StatelessWidget {
   const NavegationDrawerWidget({super.key});
@@ -27,6 +30,7 @@ class NavegationDrawerWidget extends StatelessWidget {
             buildMenuItem(
               text: 'Cronogramas',
               icon: Icons.timeline,
+              onClicked: () => selectedItem(context, 1),
             ),
             const SizedBox(
               height: 16,
@@ -34,6 +38,7 @@ class NavegationDrawerWidget extends StatelessWidget {
             buildMenuItem(
               text: 'Updates',
               icon: Icons.update,
+              onClicked: () => selectedItem(context, 2),
             ),
             const SizedBox(
               height: 24,
@@ -47,6 +52,7 @@ class NavegationDrawerWidget extends StatelessWidget {
             buildMenuItem(
               text: 'Notificações',
               icon: Icons.notifications,
+              onClicked: () => selectedItem(context, 3),
             ),
             const SizedBox(
               height: 16,
@@ -87,6 +93,27 @@ void selectedItem(BuildContext context, int index) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const Horarios(),
+        ),
+      );
+      break;
+    case 1:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const Cronogramas(),
+        ),
+      );
+      break;
+    case 2:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const Updates(),
+        ),
+      );
+      break;
+    case 3:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const Notificacoes(),
         ),
       );
       break;
