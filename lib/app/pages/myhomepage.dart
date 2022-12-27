@@ -5,12 +5,6 @@ import '../componentes/drawer/maindrawer.dart';
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-  addPonto(DateTime value) {
-    AddHorario(
-      data: DateTime.now(),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +26,7 @@ class MyHomePage extends StatelessWidget {
               child: FractionallySizedBox(
                 widthFactor: 1.0,
                 child: ElevatedButton(
-                  onPressed: () => addPonto,
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
