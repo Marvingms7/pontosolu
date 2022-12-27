@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pontosolu/componentes/drawer/maindrawer.dart';
+import '../componentes/drawer/maindrawer.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
