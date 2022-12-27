@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pontosolu/drawer/pages/cronogramas.dart';
-import 'package:pontosolu/drawer/pages/notificacoes.dart';
-import 'package:pontosolu/drawer/pages/updates.dart';
-import 'package:pontosolu/drawer/pages/userpage.dart';
+import 'package:pontosolu/componentes/drawer/pages/cronogramas.dart';
+import 'package:pontosolu/componentes/drawer/pages/notificacoes.dart';
+import 'package:pontosolu/componentes/drawer/pages/updates.dart';
+import 'package:pontosolu/componentes/drawer/pages/userpage.dart';
 import 'pages/horarios.dart';
 
 class NavegationDrawerWidget extends StatelessWidget {
