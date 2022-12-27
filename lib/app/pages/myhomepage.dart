@@ -7,6 +7,10 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _horario = [
+      Horario(date: DateTime.now()),
+    ];
+
     return Scaffold(
       drawer: const NavegationDrawerWidget(),
       appBar: AppBar(
