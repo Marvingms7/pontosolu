@@ -8,3 +8,4 @@ class Users {
   final String email;
   final String password;
 }
+
