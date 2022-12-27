@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:pontosolu/app/models/horarios.dart';
 import '../componentes/drawer/maindrawer.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
+
+  addPonto(DateTime value) {
+    AddHorario(
+      data: DateTime.now(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +32,7 @@ class MyHomePage extends StatelessWidget {
               child: FractionallySizedBox(
                 widthFactor: 1.0,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => addPonto,
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
