@@ -1,16 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pontosolu/app/models/horarios.dart';
+
 import '../componentes/drawer/maindrawer.dart';
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final _horario = [
-      Horario(date: DateTime.now()),
-    ];
+  State<MyHomePage> createState() => _MyHomePageState();
+}
 
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference data = FirebaseFirestore.instance.collection('data');
+  
     return Scaffold(
       drawer: const NavegationDrawerWidget(),
       appBar: AppBar(
@@ -30,7 +34,9 @@ class MyHomePage extends StatelessWidget {
               child: FractionallySizedBox(
                 widthFactor: 1.0,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => setState(() {
+                    data.doc().set({'data': DateTime.now()});
+                  }),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
