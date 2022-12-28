@@ -10,12 +10,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  DateTime datatime = DateTime.now();
-
+  //final realdata = Intl.defaultLocale = 'pt_BR';
+  DateTime date = DateTime.now();
   @override
   Widget build(BuildContext context) {
     CollectionReference data = FirebaseFirestore.instance.collection('data');
-    final realdata = Intl.defaultLocale = 'pt_BR';
+
     return Scaffold(
       drawer: const NavegationDrawerWidget(),
       appBar: AppBar(
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
-                  child: Text('Ponto$realdata'),
+                  child: Text(DateFormat("HH:mm:ss").format(date).toString()),
                 ),
               ),
             ),

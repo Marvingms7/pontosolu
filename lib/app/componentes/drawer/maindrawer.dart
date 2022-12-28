@@ -15,7 +15,7 @@ class NavegationDrawerWidget extends StatelessWidget {
     const name = 'Marcus Vinicius';
     const email = 'marcus.vinicius.03272000@abscorporativo.com.br';
     const urlImage =
-        'https://lh3.googleusercontent.com/6uk_gb8x2_N5JeLrcOjYVY6a3FvaPkJosrAUb9fjTWMpUczwnkE4d3AaEl3dbehjLNKJIGbG0TVogwf9PX9CKQsJe6oQrPNJt3DyMfl32QAhLS_6ho694r4sTrH_92c2fbAEpGW-jyg7nRfJlRXgt48K2JYnEYX_5JdaXA-jiW-wC-DOVUtauhtpEr4Uqxk6c3jb6RF90fPs3FK7LfcNHnCGp2tce_J-PqFwi41IhKiW79vMN3VpBXuPnoZ7ANp5cDQg6koSS95t9cC4uz0idPkXK-HzvE2gZx8RuiWbY39YLHbN4YzFw_CjF52Zyyw6y8XQCbKqVUjPPm2rquj9CmEBAmz-wb3g20doQeU8rk4sLViEOkBIsEYgE3xYehk023ItIUOuvgLsqNDTsP-Sw3X8B9CnsETesSMAu1bx35SSwRjzM2WWfGI8ShgPXKF_LP6Ik2gmDlFOwRQceH92zaC7tpPyNYoDA4_pJMmBGUxlp8BNHXmJx6CLiblDI1wtPhgTxa02ESD9RFkuFDGQx17BH3kW5ybrq5fxKqAVTcjEY3LKVtk33XLHrVWXAIRTyoBYU_5Xtx-s9FUfJODhcAAV4VviWScrhy-v54PRKBDIfd1jhbyj_Wgi-e8VDS6zH4PFoWDvvygMQCYqTXd9l2mV6joDGCZWotDRggOiT7QMvUnFUp2DDCT5SUM2dC_fNDT403-yKjeim6psMiegJbQ-y2gc42aIs6dOwgaLm8bVUsTctd8g-WGugUoN-niAvAQlB88Bf42WpW7pnY6T5MIBQfH6iLJKBatDIsWyVvwDWqnJLUlUZyGr7TFI7zunxfGDsDuDSW7vZsXPIhCLLS7VjhsRwsAQJCIf5Lw-1tvVmAiPYt2NYQlDdnTTXYSnm4fcxk4SdK1bgzaMJujCa_xWOwaFte3eG3IGh0_AOj0uoTr6XA=w486-h649-no?authuser=0';
+        'https://assets.reedpopcdn.com/warner-bros-esta-desde-2013-a-tentar-criar-um-jogo-do-super-homem-1573554479719.jpg/BROK/thumbnail/1600x900/quality/100/warner-bros-esta-desde-2013-a-tentar-criar-um-jogo-do-super-homem-1573554479719.jpg';
 
     return Drawer(
       child: Material(
