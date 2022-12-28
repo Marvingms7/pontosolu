@@ -10,12 +10,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //final realdata = Intl.defaultLocale = 'pt_BR';
   DateTime date = DateTime.now();
+  _baterponto() {
+    setState(() {
+      CollectionReference data = FirebaseFirestore.instance.collection('data');
+      data.doc().set({'data': DateTime.now()});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    CollectionReference data = FirebaseFirestore.instance.collection('data');
-
     return Scaffold(
       drawer: const NavegationDrawerWidget(),
       appBar: AppBar(
@@ -35,9 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: FractionallySizedBox(
                 widthFactor: 1.0,
                 child: ElevatedButton(
-                  onPressed: () => setState(() {
-                    data.doc().set({'data': DateTime.now()});
-                  }),
+                  onPressed: () => _baterponto(),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
