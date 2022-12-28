@@ -1,20 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 import '../componentes/drawer/maindrawer.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  DateTime datatime = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     CollectionReference data = FirebaseFirestore.instance.collection('data');
-  
+    final realdata = Intl.defaultLocale = 'pt_BR';
     return Scaffold(
       drawer: const NavegationDrawerWidget(),
       appBar: AppBar(
@@ -40,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
-                  child: const Text('Ponto'),
+                  child: Text('Ponto$realdata'),
                 ),
               ),
             ),
