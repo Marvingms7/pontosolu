@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:quickalert/quickalert.dart';
 import 'maindrawer.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,6 +12,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   DateTime date = DateTime.now();
+  void quickalert(context, QuickAlertType quickAlertType) {
+    QuickAlert.show(
+      context: context,
+      type: quickAlertType,
+      onConfirmBtnTap: () async => _baterponto(),
+    );
+    return;
+  }
+
   _baterponto() {
     setState(() {
       CollectionReference data = FirebaseFirestore.instance.collection('data');
@@ -39,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: FractionallySizedBox(
                 widthFactor: 1.0,
                 child: ElevatedButton(
-                  onPressed: () => _baterponto(),
+                  onPressed: () => quickalert(context, QuickAlertType.confirm),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0)),
