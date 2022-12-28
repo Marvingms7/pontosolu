@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pontosolu/app/componentes/drawer/pages/cronogramas.dart';
-import 'package:pontosolu/app/componentes/drawer/pages/notificacoes.dart';
-import 'package:pontosolu/app/componentes/drawer/pages/updates.dart';
-import 'package:pontosolu/app/componentes/drawer/pages/userpage.dart';
-
-import 'pages/horarios.dart';
+import 'package:pontosolu/app/pages/cronogramas.dart';
+import 'package:pontosolu/app/pages/horarios.dart';
+import 'package:pontosolu/app/pages/notificacoes.dart';
+import 'package:pontosolu/app/pages/updates.dart';
+import 'package:pontosolu/app/pages/userpage.dart';
 
 class NavegationDrawerWidget extends StatelessWidget {
   const NavegationDrawerWidget({super.key});
@@ -28,7 +27,7 @@ class NavegationDrawerWidget extends StatelessWidget {
                 email: email,
                 onClicked: () => Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => UserPage(
+                        builder: (context) => const UserPage(
                           name: name,
                           urlImage: urlImage,
                         ),

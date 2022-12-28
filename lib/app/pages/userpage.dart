@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class UserPage extends StatelessWidget {
-  String name;
-  String urlImage;
+  final String name;
+  final String urlImage;
 
-  UserPage({
+  const UserPage({
     super.key,
     required this.name,
     required this.urlImage,
