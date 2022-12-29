@@ -26,6 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
       CollectionReference data = FirebaseFirestore.instance.collection('data');
       data.doc().set({'data': DateTime.now()});
     });
+    return;
   }
 
   @override
