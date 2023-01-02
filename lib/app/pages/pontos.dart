@@ -14,33 +14,91 @@ class Pontos extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding:
-                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
-                child: const Text('Entrada'),
+              Flexible(
+                flex: 1,
+                child: FractionallySizedBox(
+                  widthFactor: 1,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.fromLTRB(
+                        150.0,
+                        40.0,
+                        150.0,
+                        40.0,
+                      ),
+                      backgroundColor: Colors.greenAccent,
+                      elevation: 10,
+                      shadowColor: Colors.greenAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    child: const Text('Entrada'),
+                  ),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding:
-                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
-                child: const Text('Almoço'),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.fromLTRB(
+                      150.0,
+                      40.0,
+                      150.0,
+                      40.0,
+                    ),
+                    elevation: 10,
+                    shadowColor: Colors.blueAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text('Almoço'),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding:
-                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
-                child: const Text('Retorno'),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.fromLTRB(
+                      150.0,
+                      40.0,
+                      150.0,
+                      40.0,
+                    ),
+                    backgroundColor: Colors.amberAccent,
+                    elevation: 10,
+                    shadowColor: Colors.amberAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text('Retorno'),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding:
-                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
-                child: const Text('Saida'),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.fromLTRB(
+                      150.0,
+                      40.0,
+                      150.0,
+                      40.0,
+                    ),
+                    backgroundColor: Colors.redAccent,
+                    elevation: 10,
+                    shadowColor: Colors.redAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text('Saida'),
+                ),
               ),
             ],
           ),
