@@ -14,10 +14,34 @@ class Pontos extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ElevatedButton(onPressed: () {}, child: const Text('Entrada')),
-              ElevatedButton(onPressed: () {}, child: const Text('Almoço')),
-              ElevatedButton(onPressed: () {}, child: const Text('Retorno')),
-              ElevatedButton(onPressed: () {}, child: const Text('Saida')),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    padding:
+                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
+                child: const Text('Entrada'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    padding:
+                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
+                child: const Text('Almoço'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    padding:
+                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
+                child: const Text('Retorno'),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    padding:
+                        const EdgeInsets.fromLTRB(150.0, 40.0, 150.0, 40.0)),
+                child: const Text('Saida'),
+              ),
             ],
           ),
         ),
