@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:pontosolu/app/pages/pontos.dart';
 import 'package:quickalert/quickalert.dart';
 import 'maindrawer.dart';
 
@@ -93,7 +92,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding:
                               const EdgeInsets.fromLTRB(1.5, 3.0, 1.0, 1.0),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Pontos()));
+                            },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.blueAccent,
                                 fixedSize: const Size(100.0, 190.0)),
