@@ -54,7 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () => quickalert(context, QuickAlertType.confirm),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
-                      fixedSize: const Size(50.0, 550.0)),
+                      fixedSize: const Size(50.0, 550.0),
+                      elevation: 10,
+                      shadowColor: Colors.redAccent),
                   child: Text(DateFormat("HH:mm:ss").format(date).toString()),
                 ),
               ),
@@ -73,11 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         widthFactor: 1.0,
                         child: Padding(
                           padding:
-                              const EdgeInsets.fromLTRB(1.0, 3.0, 1.5, 1.0),
+                              const EdgeInsets.fromLTRB(1.0, 10.0, 3.0, 1.0),
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.greenAccent,
+                                elevation: 10,
+                                shadowColor: Colors.greenAccent,
                                 fixedSize: const Size(100.0, 190.0)),
                             child: const Text('Sincronizar'),
                           ),
@@ -90,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         widthFactor: 1.0,
                         child: Padding(
                           padding:
-                              const EdgeInsets.fromLTRB(1.5, 3.0, 1.0, 1.0),
+                              const EdgeInsets.fromLTRB(3.0, 10.0, 1.0, 1.0),
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
@@ -98,6 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.blueAccent,
+                                elevation: 10,
+                                shadowColor: Colors.blueAccent,
                                 fixedSize: const Size(100.0, 190.0)),
                             child: const Text('Pontos batidos Hoje'),
                           ),
