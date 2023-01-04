@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 
 class Pontos extends StatelessWidget {
   const Pontos({super.key});
