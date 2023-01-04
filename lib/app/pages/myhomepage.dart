@@ -23,9 +23,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _baterponto() {
+    final hoje = DateTime.now();
+    final hora = DateFormat.Hm().format(hoje);
     setState(() {
-      CollectionReference data = FirebaseFirestore.instance.collection('data');
-      data.doc().set({'data': DateTime.now()});
+      CollectionReference pontos =
+          FirebaseFirestore.instance.collection('Pontos');
+      pontos.doc(hora.toString()).set({
+        'data': hoje,
+        'hora': hora,
+      });
     });
     return;
   }
