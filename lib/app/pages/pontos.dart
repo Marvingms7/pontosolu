@@ -1,7 +1,41 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 
-class Pontos extends StatelessWidget {
+class Pontos extends StatefulWidget {
   const Pontos({super.key});
+
+  @override
+  State<Pontos> createState() => _PontosState();
+}
+
+class _PontosState extends State<Pontos> {
+  DateTime date = DateTime.now();
+
+  void quickalert(context, QuickAlertType quickAlertType) {
+    QuickAlert.show(
+      context: context,
+      type: quickAlertType,
+      onConfirmBtnTap: () async => _baterponto(),
+    );
+    return;
+  }
+
+  _baterponto() {
+    final hoje = DateTime.now();
+    final hora = DateFormat.Hm().format(hoje);
+    setState(() {
+      CollectionReference pontos =
+          FirebaseFirestore.instance.collection('Pontos');
+      pontos.doc(hora.toString()).set({
+        'data': hoje,
+        'hora': hora,
+      });
+    });
+    return;
+  }
 
   @override
   Widget build(BuildContext context) {

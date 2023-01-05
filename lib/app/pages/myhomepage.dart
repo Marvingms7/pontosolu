@@ -13,28 +13,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   DateTime date = DateTime.now();
-  void quickalert(context, QuickAlertType quickAlertType) {
-    QuickAlert.show(
-      context: context,
-      type: quickAlertType,
-      onConfirmBtnTap: () async => _baterponto(),
-    );
-    return;
-  }
-
-  _baterponto() {
-    final hoje = DateTime.now();
-    final hora = DateFormat.Hm().format(hoje);
-    setState(() {
-      CollectionReference pontos =
-          FirebaseFirestore.instance.collection('Pontos');
-      pontos.doc(hora.toString()).set({
-        'data': hoje,
-        'hora': hora,
-      });
-    });
-    return;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: FractionallySizedBox(
                 widthFactor: 1.0,
                 child: ElevatedButton(
-                  onPressed: () => quickalert(context, QuickAlertType.confirm),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const Pontos()));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0),
@@ -102,10 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding:
                               const EdgeInsets.fromLTRB(3.0, 10.0, 1.0, 1.0),
                           child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Pontos()));
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.blueAccent,
                                 elevation: 10,
