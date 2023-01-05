@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/pages/pontos.dart';
@@ -12,7 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   DateTime date = DateTime.now();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 widthFactor: 1.0,
                 child: ElevatedButton(
                   onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Pontos()));
-                            } ,
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const Pontos()));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                       fixedSize: const Size(50.0, 550.0),
