@@ -7,7 +7,6 @@ import 'package:quickalert/widgets/quickalert_dialog.dart';
 class Pontos extends StatefulWidget {
   const Pontos({super.key});
 
-
   @override
   State<Pontos> createState() => _PontosState();
 }
@@ -28,13 +27,17 @@ class _PontosState extends State<Pontos> {
     final hoje = DateTime.now();
     final mes = DateFormat.yMMMM().format(hoje);
     final dia = DateFormat.d().format(hoje);
-    final diasemana = DateFormat.EEEE().format(hoje);
-    final hora = DateFormat.Hm().format(hoje);
+    //final diasemana = DateFormat.EEEE().format(hoje);
+    //final hora = DateFormat.Hm().format(hoje);
+    String user = 'marcus';
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(mes.toString());
-      estatico.doc(dia.toString()).set({
-        'dia da semana': diasemana,
+      estatico.doc(dia.toString()).collection('Horarios').doc(user).set({
+        'entrada': Null,
+        'Almoco': Null,
+        'Retorno': Null,
+        'Saida': Null,
       });
     });
     return;
@@ -56,7 +59,8 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton.icon(
-                    onPressed: () => quickalert(context, QuickAlertType.confirm),
+                    onPressed: () =>
+                        quickalert(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
