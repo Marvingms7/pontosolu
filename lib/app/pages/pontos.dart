@@ -28,16 +28,16 @@ class _PontosState extends State<Pontos> {
     final mes = DateFormat.yMMMM().format(hoje);
     final dia = DateFormat.d().format(hoje);
     //final diasemana = DateFormat.EEEE().format(hoje);
-    //final hora = DateFormat.Hm().format(hoje);
-    String user = 'marcus';
+    final hora = DateFormat.Hm().format(hoje);
+    String user = '08770202303';
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(mes.toString());
       estatico.doc(dia.toString()).collection('Horarios').doc(user).set({
-        'entrada': Null,
-        'Almoco': Null,
-        'Retorno': Null,
-        'Saida': Null,
+        'entrada': hora,
+        'Almoco': null,
+        'Retorno': null,
+        'Saida': null,
       });
     });
     return;
