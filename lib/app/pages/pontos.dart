@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:pontosolu/app/models/data.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
 
@@ -12,8 +13,6 @@ class Pontos extends StatefulWidget {
 }
 
 class _PontosState extends State<Pontos> {
-  DateTime date = DateTime.now();
-
   void quickalert(context, QuickAlertType quickAlertType) {
     QuickAlert.show(
       context: context,
@@ -24,17 +23,23 @@ class _PontosState extends State<Pontos> {
   }
 
   _baterponto() {
-    final hoje = DateTime.now();
-    final mes = DateFormat.yMMMM().format(hoje);
-    final dia = DateFormat.d().format(hoje);
-    //final diasemana = DateFormat.EEEE().format(hoje);
-    final hora = DateFormat.Hm().format(hoje);
-    String user = '08770202303';
     setState(() {
+      DateTime hoje = DateTime.now();
+      final mes = DateFormat.yMMMM().format(hoje);
+      final dia = DateFormat.MMMEd().format(hoje);
+      final hora = DateFormat.Hm().format(hoje);
+      String user = '08770202303';
+      Date data = Date(
+        mes: mes,
+        dia: dia,
+        semana: dia,
+        hora: hora,
+      );
+
       CollectionReference estatico =
-          FirebaseFirestore.instance.collection(mes.toString());
-      estatico.doc(dia.toString()).collection('Horarios').doc(user).set({
-        'entrada': hora,
+          FirebaseFirestore.instance.collection(data.mes);
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
+        'entrada': data.hora,
         'Almoco': null,
         'Retorno': null,
         'Saida': null,
