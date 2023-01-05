@@ -40,7 +40,7 @@ class _PontosState extends State<Pontos> {
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
         'entrada': data.hora,
-        'Almoco': null,
+        'Almoco': '11:30',
         'Retorno': null,
         'Saida': null,
       });
