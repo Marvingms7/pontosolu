@@ -17,30 +17,34 @@ class _PontosState extends State<Pontos> {
     QuickAlert.show(
       context: context,
       type: quickAlertType,
-      onConfirmBtnTap: () async => _baterponto(),
+      onConfirmBtnTap: () async => baterponto(),
     );
     return;
   }
 
-  _baterponto() {
-    setState(() {
-      DateTime hoje = DateTime.now();
-      final mes = DateFormat.yMMMM().format(hoje);
-      final dia = DateFormat.MMMEd().format(hoje);
-      final hora = DateFormat.Hm().format(hoje);
-      String user = '08770202303';
-      Date data = Date(
-        mes: mes,
-        dia: dia,
-        semana: dia,
-        hora: hora,
-      );
+  static DateTime hoje = DateTime.now();
+  final mes = DateFormat.yMMMM().format(hoje);
+  final dia = DateFormat.MMMEd().format(hoje);
+  final hora = DateFormat.Hm().format(hoje);
 
+  baterponto() {
+    String user = '08770202303';
+    Date data = Date(
+      mes: mes,
+      dia: dia,
+      semana: dia,
+      hora: hora,
+    );
+    entrada() {
+      return data.hora;
+    }
+
+    setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'entrada': data.hora,
-        'Almoco': '11:30',
+        'entrada': entrada(),
+        'Almoco': null,
         'Retorno': null,
         'Saida': null,
       });
