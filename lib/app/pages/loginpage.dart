@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -47,6 +49,16 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               style: const TextStyle(fontSize: 20),
+            ),
+            Container(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Esqueceu sua senha?',
+                  textAlign: TextAlign.right,
+                ),
+              ),
             ),
           ],
         ),
