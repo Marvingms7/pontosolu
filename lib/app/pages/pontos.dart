@@ -17,7 +17,7 @@ class _PontosState extends State<Pontos> {
     QuickAlert.show(
       context: context,
       type: quickAlertType,
-      onConfirmBtnTap: () async => baterponto(),
+      onConfirmBtnTap: () async => entrada(),
     );
     return;
   }
@@ -27,7 +27,7 @@ class _PontosState extends State<Pontos> {
   final dia = DateFormat.MMMEd().format(hoje);
   final hora = DateFormat.Hm().format(hoje);
 
-  baterponto() {
+  entrada() {
     String user = '08770202303';
     Date data = Date(
       mes: mes,
@@ -35,18 +35,66 @@ class _PontosState extends State<Pontos> {
       semana: dia,
       hora: hora,
     );
-    entrada() {
-      return data.hora;
-    }
-
+  
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'entrada': entrada(),
-        'Almoco': null,
-        'Retorno': null,
-        'Saida': null,
+        'entrada': data.dia,
+      });
+    });
+    return;
+  }
+   almoco() {
+    String user = '08770202303';
+    Date data = Date(
+      mes: mes,
+      dia: dia,
+      semana: dia,
+      hora: hora,
+    );
+  
+    setState(() {
+      CollectionReference estatico =
+          FirebaseFirestore.instance.collection(data.mes);
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
+        'entrada': data.dia,
+      });
+    });
+    return;
+  }
+   retorno() {
+    String user = '08770202303';
+    Date data = Date(
+      mes: mes,
+      dia: dia,
+      semana: dia,
+      hora: hora,
+    );
+  
+    setState(() {
+      CollectionReference estatico =
+          FirebaseFirestore.instance.collection(data.mes);
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
+        'entrada': data.dia,
+      });
+    });
+    return;
+  }
+   saida() {
+    String user = '08770202303';
+    Date data = Date(
+      mes: mes,
+      dia: dia,
+      semana: dia,
+      hora: hora,
+    );
+  
+    setState(() {
+      CollectionReference estatico =
+          FirebaseFirestore.instance.collection(data.mes);
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
+        'entrada': data.dia,
       });
     });
     return;
