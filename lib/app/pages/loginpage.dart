@@ -15,6 +15,31 @@ class _LoginPageState extends State<LoginPage> {
   final senha = TextEditingController();
 
   bool islogin = true;
+  late String titulo;
+  late String actionButton;
+  late String toggleButton;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setFormAction(true);
+  }
+
+  setFormAction(bool acao){
+    setState(() {
+      islogin = acao;
+      if(islogin){
+        titulo = 'Bem vindo';
+        actionButton = 'Login';
+        toggleButton = 'Registrar-se';
+      }else{
+        titulo = 'Crie sua conta';
+        actionButton = 'Registrar';
+        toggleButton = 'Voltar ao login';
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
