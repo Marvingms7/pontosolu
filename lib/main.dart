@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pontosolu/app/pages/authservice.dart';
+import 'package:provider/provider.dart';
 import 'app/firebase/firebase_options.dart';
 import 'app/pages/loginpage.dart';
 
@@ -8,7 +10,10 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => AuthService(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

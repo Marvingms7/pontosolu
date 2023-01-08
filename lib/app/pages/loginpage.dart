@@ -2,9 +2,19 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final formkey = GlobalKey();
+  final email = TextEditingController();
+  final senha = TextEditingController();
+
+  bool islogin = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
