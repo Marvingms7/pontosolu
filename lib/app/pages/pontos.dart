@@ -13,11 +13,35 @@ class Pontos extends StatefulWidget {
 }
 
 class _PontosState extends State<Pontos> {
-  void quickalert(context, QuickAlertType quickAlertType) {
+  void quickalert1(context, QuickAlertType quickAlertType) {
     QuickAlert.show(
       context: context,
       type: quickAlertType,
       onConfirmBtnTap: () async => entrada(),
+    );
+    return;
+  }
+  void quickalert2(context, QuickAlertType quickAlertType) {
+    QuickAlert.show(
+      context: context,
+      type: quickAlertType,
+      onConfirmBtnTap: () async => almoco(),
+    );
+    return;
+  }
+  void quickalert3(context, QuickAlertType quickAlertType) {
+    QuickAlert.show(
+      context: context,
+      type: quickAlertType,
+      onConfirmBtnTap: () async => retorno(),
+    );
+    return;
+  }
+  void quickalert4(context, QuickAlertType quickAlertType) {
+    QuickAlert.show(
+      context: context,
+      type: quickAlertType,
+      onConfirmBtnTap: () async => saida(),
     );
     return;
   }
@@ -40,7 +64,7 @@ class _PontosState extends State<Pontos> {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'entrada': data.dia,
+        'Entrada': data.dia,
       });
     });
     return;
@@ -58,7 +82,7 @@ class _PontosState extends State<Pontos> {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'entrada': data.dia,
+        'Almoco': data.dia,
       });
     });
     return;
@@ -76,7 +100,7 @@ class _PontosState extends State<Pontos> {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'entrada': data.dia,
+        'Retorno': data.dia,
       });
     });
     return;
@@ -94,7 +118,7 @@ class _PontosState extends State<Pontos> {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
       estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'entrada': data.dia,
+        'Saida': data.dia,
       });
     });
     return;
@@ -117,7 +141,7 @@ class _PontosState extends State<Pontos> {
                   widthFactor: 1,
                   child: ElevatedButton.icon(
                     onPressed: () =>
-                        quickalert(context, QuickAlertType.confirm),
+                        quickalert1(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
@@ -145,7 +169,7 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => quickalert2(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
@@ -168,7 +192,7 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => quickalert3(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
@@ -192,7 +216,7 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => quickalert4(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
