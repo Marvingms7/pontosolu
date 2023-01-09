@@ -1,6 +1,3 @@
-import 'dart:ffi';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:pontosolu/app/pages/authservice.dart';
 import 'package:provider/provider.dart';
