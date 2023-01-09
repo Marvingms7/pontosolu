@@ -52,7 +52,14 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  registrar() {}
+  registrar() async {
+    try {
+      await context.read<AuthService>().registrar(email.text, senha.text);
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
