@@ -165,13 +165,14 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: SizedBox(
-                      height: 50,
-                      child: TextButton(
-                        onPressed: () => setFormAction(!islogin),
-                        child: Text(
-                          toggleButton,
-                        ),
-                      )),
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () => setFormAction(!islogin),
+                      child: Text(
+                        toggleButton,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -30,7 +30,7 @@ class AuthService extends ChangeNotifier {
 
   registrar(String email, String senha) async {
     try {
-      _auth.createUserWithEmailAndPassword(email: email, password: senha);
+      await _auth.createUserWithEmailAndPassword(email: email, password: senha);
       _getUser();
     } on FirebaseException catch (e) {
       if (e.code == 'weak-password') {
@@ -43,7 +43,7 @@ class AuthService extends ChangeNotifier {
 
   login(String email, String senha) async {
     try {
-      _auth.signInWithEmailAndPassword(email: email, password: senha);
+      await _auth.signInWithEmailAndPassword(email: email, password: senha);
       _getUser();
     } on FirebaseException catch (e) {
       if (e.code == 'user-not-found') {
