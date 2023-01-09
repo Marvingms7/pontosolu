@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 elevation: 10,
                                 shadowColor: Colors.greenAccent,
                                 fixedSize: const Size(100.0, 190.0)),
-                            child: const Text('Sincronizar'),
+                            child: const Text('Ajuste de ponto'),
                           ),
                         ),
                       ),

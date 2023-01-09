@@ -21,6 +21,7 @@ class _PontosState extends State<Pontos> {
     );
     return;
   }
+
   void quickalert2(context, QuickAlertType quickAlertType) {
     QuickAlert.show(
       context: context,
@@ -29,6 +30,7 @@ class _PontosState extends State<Pontos> {
     );
     return;
   }
+
   void quickalert3(context, QuickAlertType quickAlertType) {
     QuickAlert.show(
       context: context,
@@ -37,6 +39,7 @@ class _PontosState extends State<Pontos> {
     );
     return;
   }
+
   void quickalert4(context, QuickAlertType quickAlertType) {
     QuickAlert.show(
       context: context,
@@ -59,17 +62,18 @@ class _PontosState extends State<Pontos> {
       semana: dia,
       hora: hora,
     );
-  
+
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Entrada': data.dia,
+      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+        'Entrada': data.hora,
       });
     });
     return;
   }
-   almoco() {
+
+  almoco() {
     String user = '08770202303';
     Date data = Date(
       mes: mes,
@@ -77,17 +81,18 @@ class _PontosState extends State<Pontos> {
       semana: dia,
       hora: hora,
     );
-  
+
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Almoco': data.dia,
+      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+        'Almoco': data.hora,
       });
     });
     return;
   }
-   retorno() {
+
+  retorno() {
     String user = '08770202303';
     Date data = Date(
       mes: mes,
@@ -95,17 +100,18 @@ class _PontosState extends State<Pontos> {
       semana: dia,
       hora: hora,
     );
-  
+
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Retorno': data.dia,
+      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+        'Retorno': data.hora,
       });
     });
     return;
   }
-   saida() {
+
+  saida() {
     String user = '08770202303';
     Date data = Date(
       mes: mes,
@@ -113,12 +119,12 @@ class _PontosState extends State<Pontos> {
       semana: dia,
       hora: hora,
     );
-  
+
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Saida': data.dia,
+      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+        'Saida': data.hora,
       });
     });
     return;
@@ -169,7 +175,8 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(
-                    onPressed: () => quickalert2(context, QuickAlertType.confirm),
+                    onPressed: () =>
+                        quickalert2(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
@@ -192,7 +199,8 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(
-                    onPressed: () => quickalert3(context, QuickAlertType.confirm),
+                    onPressed: () =>
+                        quickalert3(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
@@ -216,7 +224,8 @@ class _PontosState extends State<Pontos> {
                 child: FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(
-                    onPressed: () => quickalert4(context, QuickAlertType.confirm),
+                    onPressed: () =>
+                        quickalert4(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                         150.0,
