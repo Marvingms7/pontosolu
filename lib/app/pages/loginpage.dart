@@ -21,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     setFormAction(true);
   }
@@ -51,42 +50,61 @@ class _LoginPageState extends State<LoginPage> {
             key: formkey,
             child: Column(
               children: [
-                Text(titulo,
-                style: const TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: -1.5,
-                ),
-                ),
-                TextFormField(
-                  controller: email,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    labelText: "Email",
-                    labelStyle: TextStyle(
-                      color: Colors.black38,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                    ),
+                Text(
+                  titulo,
+                  style: const TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: -1.5,
                   ),
-                  style: const TextStyle(fontSize: 20),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: TextFormField(
+                    controller: email,
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Informe o email correto!';
+                      }
+                    },
+                    decoration: const InputDecoration(
+                      labelText: "Email",
+                      labelStyle: TextStyle(
+                        color: Colors.black38,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
+                    ),
+                    style: const TextStyle(fontSize: 20),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                TextFormField(
-                  controller: senha,
-                  keyboardType: TextInputType.text,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    labelText: "Senha",
-                    labelStyle: TextStyle(
-                      color: Colors.black38,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: TextFormField(
+                    controller: senha,
+                    keyboardType: TextInputType.text,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Informe a senha correta!';
+                      }else if (value!.length < 6){
+                        return 'Sua senha deve ter no minimo 6 digitos!';
+                      }
+                    },
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: "Senha",
+                      labelStyle: TextStyle(
+                        color: Colors.black38,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
                     ),
+                    style: const TextStyle(fontSize: 20),
                   ),
-                  style: const TextStyle(fontSize: 20),
                 ),
                 Container(
                   alignment: Alignment.centerRight,
