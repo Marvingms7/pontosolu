@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pontosolu/app/pages/authcheck.dart';
 import 'package:pontosolu/app/pages/authservice.dart';
 import 'package:provider/provider.dart';
 import 'app/firebase/firebase_options.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       //home: MyHomePage(),
-      home: LoginPage(),
+      debugShowCheckedModeBanner: false,
+      home: AuthCheck(),
     );
   }
 }
