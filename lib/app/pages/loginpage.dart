@@ -2,6 +2,8 @@ import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:pontosolu/app/pages/authservice.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -41,7 +43,15 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
-  login() {}
+  login() async {
+    try {
+      await context.read<AuthService>().login(email.text, senha.text);
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
+
   registrar() {}
 
   @override
@@ -95,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Informe a senha correta!';
-                      } else if (value!.length < 6) {
+                      } else if (value.length < 6) {
                         return 'Sua senha deve ter no minimo 6 digitos!';
                       }
                       return null;
