@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pontosolu/app/pages/authservice.dart';
 import 'package:pontosolu/app/pages/cronogramas.dart';
 import 'package:pontosolu/app/pages/horarios.dart';
 import 'package:pontosolu/app/pages/notificacoes.dart';
 import 'package:pontosolu/app/pages/updates.dart';
 import 'package:pontosolu/app/pages/userpage.dart';
+import 'package:provider/provider.dart';
 
 class NavegationDrawerWidget extends StatelessWidget {
   const NavegationDrawerWidget({super.key});
@@ -76,6 +78,7 @@ class NavegationDrawerWidget extends StatelessWidget {
                 buildMenuItem(
                   text: 'Sair',
                   icon: Icons.logout,
+                  onClicked: () => context.read<AuthService>().logout(),
                 ),
               ],
             )
