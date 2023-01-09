@@ -41,6 +41,9 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
+  login() {}
+  registrar() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +125,13 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.all(24.0),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (islogin) {
+                        login();
+                      } else {
+                        registrar();
+                      }
+                    },
                     style: ElevatedButton.styleFrom(
                       elevation: 10,
                       textStyle: const TextStyle(fontSize: 20),
