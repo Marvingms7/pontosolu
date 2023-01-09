@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -67,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (value!.isEmpty) {
                         return 'Informe o email correto!';
                       }
+                      return null;
                     },
                     decoration: const InputDecoration(
                       labelText: "Email",
@@ -90,9 +92,10 @@ class _LoginPageState extends State<LoginPage> {
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Informe a senha correta!';
-                      }else if (value!.length < 6){
+                      } else if (value!.length < 6) {
                         return 'Sua senha deve ter no minimo 6 digitos!';
                       }
+                      return null;
                     },
                     obscureText: true,
                     decoration: const InputDecoration(
@@ -117,19 +120,21 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SizedBox(
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+                  padding: const EdgeInsets.all(24.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      elevation: 10,
+                      textStyle: const TextStyle(fontSize: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Text(
-                        'Login',
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Text(
+                        actionButton,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                   ),
@@ -137,18 +142,13 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: SizedBox(
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () => setFormAction(!islogin),
+                        child: Text(
+                          toggleButton,
                         ),
-                      ),
-                      child: const Text('Registrar-se'),
-                    ),
-                  ),
+                      )),
                 ),
               ],
             ),
