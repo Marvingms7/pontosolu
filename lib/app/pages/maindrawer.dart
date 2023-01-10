@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pontosolu/app/pages/authservice.dart';
 import 'package:pontosolu/app/pages/cronogramas.dart';
@@ -10,6 +11,13 @@ import 'package:provider/provider.dart';
 class NavegationDrawerWidget extends StatelessWidget {
   const NavegationDrawerWidget({super.key});
   //final padding = const EdgeInsets.symmetric(horizontal: 20.0);
+
+  pegarusuario() async {
+    User? user = await FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      print(user);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
