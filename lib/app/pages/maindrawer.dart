@@ -12,12 +12,6 @@ class NavegationDrawerWidget extends StatelessWidget {
   const NavegationDrawerWidget({super.key});
   //final padding = const EdgeInsets.symmetric(horizontal: 20.0);
 
-  pegarusuario() async {
-    User? user = await FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      print(user);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
