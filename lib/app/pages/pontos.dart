@@ -31,6 +31,10 @@ class _PontosState extends State<Pontos> {
       context: context,
       type: quickAlertType,
       onConfirmBtnTap: () async => almoco(),
+      text: 'Deseja bater o ponto?',
+      title: 'Almoço',
+      confirmBtnText: 'Sim',
+      cancelBtnText: 'Não',
     );
     return;
   }
@@ -40,6 +44,10 @@ class _PontosState extends State<Pontos> {
       context: context,
       type: quickAlertType,
       onConfirmBtnTap: () async => retorno(),
+      text: 'Deseja bater o ponto?',
+      title: 'Retorno',
+      confirmBtnText: 'Sim',
+      cancelBtnText: 'Não',
     );
     return;
   }
@@ -49,6 +57,10 @@ class _PontosState extends State<Pontos> {
       context: context,
       type: quickAlertType,
       onConfirmBtnTap: () async => saida(),
+      text: 'Deseja bater o ponto?',
+      title: 'Saida',
+      confirmBtnText: 'Sim',
+      cancelBtnText: 'Não',
     );
     return;
   }
