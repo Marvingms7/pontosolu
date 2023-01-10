@@ -16,7 +16,7 @@ class NavegationDrawerWidget extends StatelessWidget {
     const name = 'Marcus Vinicius';
     const email = 'marcus.vinicius.03272000@abscorporativo.com.br';
     const urlImage =
-        'https://assets.reedpopcdn.com/warner-bros-esta-desde-2013-a-tentar-criar-um-jogo-do-super-homem-1573554479719.jpg/BROK/thumbnail/1600x900/quality/100/warner-bros-esta-desde-2013-a-tentar-criar-um-jogo-do-super-homem-1573554479719.jpg';
+        'http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png';
 
     return Drawer(
       child: Material(
@@ -81,7 +81,7 @@ class NavegationDrawerWidget extends StatelessWidget {
                   onClicked: () => context.read<AuthService>().logout(),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -18,6 +18,10 @@ class _PontosState extends State<Pontos> {
       context: context,
       type: quickAlertType,
       onConfirmBtnTap: () async => entrada(),
+      text: 'Deseja bater o ponto?',
+      title: 'Entrada',
+      confirmBtnText: 'Sim',
+      cancelBtnText: 'Não',
     );
     return;
   }
@@ -133,7 +137,13 @@ class _PontosState extends State<Pontos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(
+          'Entradas e saidas',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -145,7 +155,7 @@ class _PontosState extends State<Pontos> {
                 flex: 1,
                 child: FractionallySizedBox(
                   widthFactor: 1,
-                  child: ElevatedButton.icon(
+                  child: ElevatedButton(
                     onPressed: () =>
                         quickalert1(context, QuickAlertType.confirm),
                     style: ElevatedButton.styleFrom(
@@ -162,11 +172,7 @@ class _PontosState extends State<Pontos> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                    icon: const Icon(
-                      Icons.save,
-                      size: 20,
-                    ),
-                    label: const Text('Ponto'),
+                    child: const Text('Entrada'),
                   ),
                 ),
               ),
