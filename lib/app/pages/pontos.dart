@@ -82,9 +82,10 @@ class _PontosState extends State<Pontos> {
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
+        'Nome': user,
         'Entrada': data.hora,
-      });
+      }, SetOptions(merge: true));
     });
     return;
   }
@@ -101,9 +102,9 @@ class _PontosState extends State<Pontos> {
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
         'Almoco': data.hora,
-      });
+      }, SetOptions(merge: true));
     });
     return;
   }
@@ -120,9 +121,9 @@ class _PontosState extends State<Pontos> {
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
         'Retorno': data.hora,
-      });
+      }, SetOptions(merge: true));
     });
     return;
   }
@@ -139,9 +140,9 @@ class _PontosState extends State<Pontos> {
     setState(() {
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).update({
+      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
         'Saida': data.hora,
-      });
+      }, SetOptions(merge: true));
     });
     return;
   }
