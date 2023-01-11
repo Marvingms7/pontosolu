@@ -13,6 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   final formkey = GlobalKey();
   final email = TextEditingController();
   final senha = TextEditingController();
+  final user = TextEditingController();
 
   bool islogin = true;
   late String titulo;
@@ -76,6 +77,29 @@ class _LoginPageState extends State<LoginPage> {
                     letterSpacing: -1.5,
                   ),
                 ),
+                if (islogin != true)
+                  Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: TextFormField(
+                      controller: user,
+                      keyboardType: TextInputType.name,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Digite seu nome completo';
+                        }
+                        return null;
+                      },
+                      decoration: const InputDecoration(
+                        labelText: "Nome completo",
+                        labelStyle: TextStyle(
+                          color: Colors.black38,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                        ),
+                      ),
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ),
                 Padding(
                   padding: const EdgeInsets.all(24.0),
                   child: TextFormField(
