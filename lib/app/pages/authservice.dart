@@ -34,7 +34,7 @@ class AuthService extends ChangeNotifier {
       await _auth.createUserWithEmailAndPassword(email: email, password: senha);
       FirebaseFirestore.instance
           .collection('Usuarios')
-          .doc()
+          .doc(usuario?.uid)
           .set({'nome': name});
       _getUser();
     } on FirebaseException catch (e) {
