@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -28,9 +29,13 @@ class AuthService extends ChangeNotifier {
     notifyListeners();
   }
 
-  registrar(String email, String senha) async {
+  registrar(String email, String senha, String name) async {
     try {
       await _auth.createUserWithEmailAndPassword(email: email, password: senha);
+      FirebaseFirestore.instance
+          .collection('Usuarios')
+          .doc()
+          .set({'nome': name});
       _getUser();
     } on FirebaseException catch (e) {
       if (e.code == 'weak-password') {
