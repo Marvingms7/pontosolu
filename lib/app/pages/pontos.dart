@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/models/data.dart';
@@ -75,7 +76,6 @@ class _PontosState extends State<Pontos> {
 
   entrada() {
     final contexto = Provider.of<AuthService>(context, listen: false);
-    final useruid = contexto.usuario?.uid;
 
     setState(() {
       Date data = Date(
@@ -86,8 +86,12 @@ class _PontosState extends State<Pontos> {
       );
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(useruid).set({
-        'Nome': useruid,
+      estatico
+          .doc(data.dia)
+          .collection('Usuarios')
+          .doc(contexto.usuario?.uid)
+          .set({
+        'Nome': contexto.usuario?.displayName,
         'Entrada': data.hora,
       }, SetOptions(merge: true));
     });
