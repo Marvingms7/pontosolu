@@ -46,6 +46,7 @@ dependencies:
   quickalert: ^1.0.1
   location: ^4.4.0
   provider: ^6.0.5
+  firebase_messaging_platform_interface: ^4.2.10
 
 dev_dependencies:
   flutter_test:

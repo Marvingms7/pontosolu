@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/models/data.dart';
+import 'package:pontosolu/app/pages/authservice.dart';
+import 'package:pontosolu/app/pages/loginpage.dart';
+import 'package:provider/provider.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
 
@@ -71,23 +74,23 @@ class _PontosState extends State<Pontos> {
   final hora = DateFormat.Hm().format(hoje);
 
   entrada() {
-    String user = '08770202303';
-    Date data = Date(
-      mes: mes,
-      dia: dia,
-      semana: dia,
-      hora: hora,
-    );
+    final contexto = Provider.of<AuthService>(context, listen: false);
+    final useruid = contexto.usuario?.uid;
 
     setState(() {
+      Date data = Date(
+        mes: mes,
+        dia: dia,
+        semana: dia,
+        hora: hora,
+      );
       CollectionReference estatico =
           FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Nome': user,
+      estatico.doc(data.dia).collection('Usuarios').doc(useruid).set({
+        'Nome': useruid,
         'Entrada': data.hora,
       }, SetOptions(merge: true));
     });
-    return;
   }
 
   almoco() {
