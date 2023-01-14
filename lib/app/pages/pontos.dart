@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/models/data.dart';
 import 'package:pontosolu/app/pages/authservice.dart';
-import 'package:pontosolu/app/pages/loginpage.dart';
 import 'package:provider/provider.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
@@ -76,7 +74,17 @@ class _PontosState extends State<Pontos> {
 
   entrada() {
     final contexto = Provider.of<AuthService>(context, listen: false);
-
+    final snap = FirebaseFirestore.instance
+        .collection('Usuarios')
+        .doc(contexto.usuario!.uid)
+        .get()
+        .then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        print('Document data: ${documentSnapshot.data()}');
+      } else {
+        print('Document does not exist on the database');
+      }
+    });
     setState(() {
       Date data = Date(
         mes: mes,
@@ -91,7 +99,7 @@ class _PontosState extends State<Pontos> {
           .collection('Usuarios')
           .doc(contexto.usuario?.uid)
           .set({
-        'Nome': contexto.usuario?.displayName,
+        'Nome': snap.toString(),
         'Entrada': data.hora,
       }, SetOptions(merge: true));
     });
