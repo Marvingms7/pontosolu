@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/models/data.dart';
@@ -78,31 +79,33 @@ class _PontosState extends State<Pontos> {
         .collection('Usuarios')
         .doc(contexto.usuario!.uid)
         .get()
-        .then((DocumentSnapshot documentSnapshot) {
-      if (documentSnapshot.exists) {
-        print('Document data: ${documentSnapshot.data()}');
-      } else {
-        print('Document does not exist on the database');
-      }
-    });
-    setState(() {
-      Date data = Date(
-        mes: mes,
-        dia: dia,
-        semana: dia,
-        hora: hora,
-      );
-      CollectionReference estatico =
-          FirebaseFirestore.instance.collection(data.mes);
-      estatico
-          .doc(data.dia)
-          .collection('Usuarios')
-          .doc(contexto.usuario?.uid)
-          .set({
-        'Nome': snap.toString(),
-        'Entrada': data.hora,
-      }, SetOptions(merge: true));
-    });
+        .then(
+      (value) {
+        print(value.data());
+
+        Map<String, dynamic>? v = value.data();
+        print(v!.values.elementAt(0));
+        final nome = v.values.elementAt(0);
+        setState(() {
+          Date data = Date(
+            mes: mes,
+            dia: dia,
+            semana: dia,
+            hora: hora,
+          );
+          CollectionReference estatico =
+              FirebaseFirestore.instance.collection(data.mes);
+          estatico
+              .doc(data.dia)
+              .collection('Usuarios')
+              .doc(contexto.usuario?.uid)
+              .set({
+            'Nome': nome,
+            'Entrada': data.hora,
+          }, SetOptions(merge: true));
+        });
+      },
+    );
   }
 
   almoco() {
