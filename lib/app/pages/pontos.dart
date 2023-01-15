@@ -75,7 +75,7 @@ class _PontosState extends State<Pontos> {
 
   entrada() {
     final contexto = Provider.of<AuthService>(context, listen: false);
-    final snap = FirebaseFirestore.instance
+    FirebaseFirestore.instance
         .collection('Usuarios')
         .doc(contexto.usuario!.uid)
         .get()
