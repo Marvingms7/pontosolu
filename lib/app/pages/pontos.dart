@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_database/firebase_database.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/models/data.dart';
@@ -81,11 +81,10 @@ class _PontosState extends State<Pontos> {
         .get()
         .then(
       (value) {
-        print(value.data());
-
+        // print(value.data());
         Map<String, dynamic>? v = value.data();
-        print(v!.values.elementAt(0));
-        final nome = v.values.elementAt(0);
+        // print(v!.values.elementAt(0));
+        final nome = v!.values.elementAt(0);
         setState(() {
           Date data = Date(
             mes: mes,
