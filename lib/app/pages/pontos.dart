@@ -108,60 +108,105 @@ class _PontosState extends State<Pontos> {
   }
 
   almoco() {
-    String user = '08770202303';
-    Date data = Date(
-      mes: mes,
-      dia: dia,
-      semana: dia,
-      hora: hora,
+    final contexto = Provider.of<AuthService>(context, listen: false);
+    FirebaseFirestore.instance
+        .collection('Usuarios')
+        .doc(contexto.usuario!.uid)
+        .get()
+        .then(
+      (value) {
+        // print(value.data());
+        Map<String, dynamic>? v = value.data();
+        // print(v!.values.elementAt(0));
+        final nome = v!.values.elementAt(0);
+        setState(() {
+          Date data = Date(
+            mes: mes,
+            dia: dia,
+            semana: dia,
+            hora: hora,
+          );
+          CollectionReference estatico =
+              FirebaseFirestore.instance.collection(data.mes);
+          estatico
+              .doc(data.dia)
+              .collection('Usuarios')
+              .doc(contexto.usuario?.uid)
+              .set({
+            'Nome': nome,
+            'Almoço': data.hora,
+          }, SetOptions(merge: true));
+        });
+      },
     );
-
-    setState(() {
-      CollectionReference estatico =
-          FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Almoco': data.hora,
-      }, SetOptions(merge: true));
-    });
-    return;
   }
 
   retorno() {
-    String user = '08770202303';
-    Date data = Date(
-      mes: mes,
-      dia: dia,
-      semana: dia,
-      hora: hora,
+   final contexto = Provider.of<AuthService>(context, listen: false);
+    FirebaseFirestore.instance
+        .collection('Usuarios')
+        .doc(contexto.usuario!.uid)
+        .get()
+        .then(
+      (value) {
+        // print(value.data());
+        Map<String, dynamic>? v = value.data();
+        // print(v!.values.elementAt(0));
+        final nome = v!.values.elementAt(0);
+        setState(() {
+          Date data = Date(
+            mes: mes,
+            dia: dia,
+            semana: dia,
+            hora: hora,
+          );
+          CollectionReference estatico =
+              FirebaseFirestore.instance.collection(data.mes);
+          estatico
+              .doc(data.dia)
+              .collection('Usuarios')
+              .doc(contexto.usuario?.uid)
+              .set({
+            'Nome': nome,
+            'Retorno': data.hora,
+          }, SetOptions(merge: true));
+        });
+      },
     );
-
-    setState(() {
-      CollectionReference estatico =
-          FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Retorno': data.hora,
-      }, SetOptions(merge: true));
-    });
-    return;
   }
 
   saida() {
-    String user = '08770202303';
-    Date data = Date(
-      mes: mes,
-      dia: dia,
-      semana: dia,
-      hora: hora,
+  final contexto = Provider.of<AuthService>(context, listen: false);
+    FirebaseFirestore.instance
+        .collection('Usuarios')
+        .doc(contexto.usuario!.uid)
+        .get()
+        .then(
+      (value) {
+        // print(value.data());
+        Map<String, dynamic>? v = value.data();
+        // print(v!.values.elementAt(0));
+        final nome = v!.values.elementAt(0);
+        setState(() {
+          Date data = Date(
+            mes: mes,
+            dia: dia,
+            semana: dia,
+            hora: hora,
+          );
+          CollectionReference estatico =
+              FirebaseFirestore.instance.collection(data.mes);
+          estatico
+              .doc(data.dia)
+              .collection('Usuarios')
+              .doc(contexto.usuario?.uid)
+              .set({
+            'Nome': nome,
+            'Saida': data.hora,
+          }, SetOptions(merge: true));
+        });
+      },
     );
-
-    setState(() {
-      CollectionReference estatico =
-          FirebaseFirestore.instance.collection(data.mes);
-      estatico.doc(data.dia).collection('Usuarios').doc(user).set({
-        'Saida': data.hora,
-      }, SetOptions(merge: true));
-    });
-    return;
   }
 
   @override
