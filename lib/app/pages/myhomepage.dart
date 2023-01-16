@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pontosolu/app/pages/pontos.dart';
+import 'package:pontosolu/app/pages/pontosbatidos.dart';
 import 'maindrawer.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -81,7 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding:
                               const EdgeInsets.fromLTRB(3.0, 10.0, 1.0, 1.0),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const PontosBatidos()));
+                            },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.blueAccent,
                                 elevation: 10,
