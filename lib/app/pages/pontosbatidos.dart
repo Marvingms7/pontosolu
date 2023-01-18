@@ -20,7 +20,6 @@ class _PontosBatidosState extends State<PontosBatidos> {
             // Use the data to build the UI
             DataSnapshot snapshot = snap.data!.snapshot;
             var data = snapshot.value;
-
             return Text(data.toString());
           }
           // Handle any errors that occurred
