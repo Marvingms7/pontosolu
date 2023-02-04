@@ -87,7 +87,7 @@ class LoginPageState extends State<LoginPage> {
                       keyboardType: TextInputType.name,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Digite seu nome completo!';
+                          return 'Digite seu nome completo';
                         }
                         return null;
                       },
